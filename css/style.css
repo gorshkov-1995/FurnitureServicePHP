@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css?family=Yanone+Kaffeesatz&display=swap');
+
+body {
+	font-family: 'Yanone Kaffeesatz', sans-serif;
+	padding: 0;
+	margin: 0 auto;
+	font-size: 14px;
+	width: 100%;
+}
+
+.navbar {
+	padding-top: 30px;
+	margin-bottom: 15px;
+	padding-right: 0px;
+	padding-left: 0px;
+}
+
+.navbar-nav {
+	padding: 0px;
+	margin: 0px;
+	display: block;
+}
+
+.navbar-nav li {
+	float: left;
+	display: block;
+	padding-left: 5px;
+	padding-right: 5px;
+}
+
+.navbar-nav li:hover{
+	border-left: 0.5px #707070 solid;
+	border-right: 0.5px #707070 solid;
+}
+
+.navbar-nav li a {
+	color: #707070;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+.dropdown-menu {
+    min-width: 14rem;
+    left: -10rem;
+}
+
+/*///////////////////////*/
+
+.info {
+	background-image: url(../img/bgfon.jpg);
+    background-repeat: no-repeat;
+    text-align: center;
+    padding-top: 73px;
+    padding-bottom: 119px;
+    margin: 0 auto;
+    color: #fff;
+}
+
+.info h1 {
+    font-size: 54px;
+    font-weight: bold;
+}
+
+.info p {
+	font-size: 14px;
+    padding-bottom: 35px;
+}
+
+.btn-lg {
+    padding: 11px 27px;
+    line-height: 1.5;
+    border-radius: 10px;
+    font-size: 21px;
+    text-transform: uppercase;
+    background-color: #ff3157;
+}
+
+.services:after {
+	content: '';
+	display: table;
+	width: 100%;
+	clear: both;
+}
+
+.services h3{
+	color: #101010;
+    float: left;
+    margin-top: 52px;
+    font-size: 42px;
+}
+
+.services p {
+	float: right;
+	margin-top: 65px;
+	color: #707070;
+	font-size: 18px;
+}
+
