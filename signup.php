@@ -17,9 +17,6 @@
                 //echo 'Всё готово, можете авторизоваться!';
 				//exit();
 			}
-			else{
-				echo 'Логин уже существует';
-			}
 		}
 		else {
 			echo 'Всё пусто!';
@@ -37,38 +34,36 @@
 	<link rel="stylesheet" href="css/style.css"/>
     <title>Form PHP</title>
 </head>
-<body>
+<body style="background-color: #f2f2f2;">
 	<div class="container">
 	    <?php if($isRegister == false) { ?>
-            <form class="col-5 mt-5" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
-                <p>Создайте учётную запись</p>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Введите свой Email">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword1" name="password1" placeholder="Введите пароль">
-                </div>
-                <div class="form-group">
-                    <input type="password" class="form-control" id="exampleInputPassword2" name="password2" placeholder="Повторите пароль">
-                </div>
-                <button type="submit" name="submit" class="btn btn-primary">Зарегистрироваться</button>
-            </form>
+            <div class="row register justify-content-center">
+                <form class="col-5 col-xs-12" method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
+                    <p>Создайте учётную запись</p>
+                    <div class="form-group">
+                        <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" name="username" placeholder="Введите свой Email">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword1" name="password1" placeholder="Введите пароль">
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" id="exampleInputPassword2" name="password2" placeholder="Повторите пароль">
+                    </div>
+                    <button type="submit" name="submit" class="btn btn-primary align-middle">Зарегистрироваться</button>
+                </form>
+            </div>
         <?php } else { ?>
             <div class="modal" style="display: block" tabindex="-1" role="dialog">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title">Регистрация!</h5>
+                            <h5 class="modal-title">Регистрация завершена успешно!</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
+                                
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <p>Готово!</p>
-                        </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Нештяк!</button>
+                            <a href="index.php"><button type="button" class="btn btn-primary">Вернуться на главную страницу</button></a>
                         </div>
                     </div>
                 </div>

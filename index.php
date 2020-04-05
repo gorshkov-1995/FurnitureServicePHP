@@ -1,5 +1,4 @@
 <?php 
-
 	function showMessage($message, $isError = false){
 		$classAlert = 'success';
 		if ($isError == true) 
@@ -7,16 +6,13 @@
 			$classAlert = "danger";
 		}
 
-		echo '<div class="alert alert-'.$classAlert.' alert-dismissible fade show" role="alert">'.
+		echo '<div class="alert alert-'.$classAlert.' alert-dismissible fade show  container" role="alert">'.
 				  $message.
 				  '<button type="button" class="close" data-dismiss="alert" aria-label="Close">'.
 				    '<span aria-hidden="true">&times;</span>'.
 				  '</button>'.
 			  '</div>';
 	}
-
-
-
 	$dbc = mysqli_connect('localhost', 'root', '', 'lesson');
 	if(!isset($_COOKIE['user_id'])) {
 		if(isset($_POST['submit'])) {
@@ -47,7 +43,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<title>PHP регистрация</title>
+	<title>МебельСервис</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 	<link rel="stylesheet" href="css/style.css">
 </head>
@@ -58,7 +54,10 @@
 
 	<nav class="navbar navbar-expand-lg navbar-light">
 		<img src="img/logo.jpg" alt="logo">
-		<div class="collapse navbar-collapse">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<nav class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav ml-auto ">
 				<li class="nav-item">
 					<a href="#" class="nav-link">+7 903-642-00-08</a>
@@ -80,13 +79,11 @@
 				</li>
 				<li class="nav-item">
 
+
+				<?php if(empty($_COOKIE['username'])) { ?>
 					<div class="dropdown">
-					  	<a class=" dropdown-toggle nav-link" href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    Войти</a>
+					  	<a class=" dropdown-toggle nav-link" href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Войти</a>
 					  	<div class="dropdown-menu">
-
-			  			<?php if(empty($_COOKIE['username'])) { ?>
-
 							<form class="px-4 py-3"  method="POST" action="<?php echo $_SERVER['PHP_SELF']; ?>">
 							    <div class="form-group">
 							      	<label for="username">Введите ваш Email</label>
@@ -99,18 +96,25 @@
 							    <button type="submit" name="submit" class="btn btn-primary">Войти</button>
 							    <div class="dropdown-divider"></div>
 							  	<a class="dropdown-item" href="signup.php">Создать аккаунт!</a>
-							  	<a class="dropdown-item" href="#">Забыли пароль?</a>
 							</form>
-						<?php } 
-						else { ?>
-							<p><a href="myprofile.php">Мой профиль</a></p>
-							<p><a href="exit.php">Выйти</a></p>
-							<?php } ?>
 						</div>
 					</div>
+				<?php } 
+				else { ?>
+					<div class="dropdown">
+					  	<a class=" dropdown-toggle nav-link" href="#"  id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+						<?php echo $_COOKIE['username'];?>
+					  	</a>
+					  	<div class="dropdown-menu auto_exit">
+							<p><a href="#">Мой профиль</a></p>
+							<hr>
+							<p><a href="exit.php">Выйти</a></p>
+						</div>
+					</div>
+				<?php } ?>
 				</li>
 			</ul>
-		</div>	
+		</nav>
 	</nav>
 	
 

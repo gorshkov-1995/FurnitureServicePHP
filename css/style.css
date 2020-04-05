@@ -9,10 +9,7 @@ body {
 }
 
 .navbar {
-	padding-top: 30px;
-	margin-bottom: 15px;
-	padding-right: 0px;
-	padding-left: 0px;
+	padding: 15px 0px;
 }
 
 .navbar-nav {
@@ -27,21 +24,16 @@ body {
 	padding-left: 5px;
 	padding-right: 5px;
 }
-
+/*
 .navbar-nav li:hover{
 	border-left: 0.5px #707070 solid;
 	border-right: 0.5px #707070 solid;
 }
-
+*/
 .navbar-nav li a {
 	color: #707070;
 	text-decoration: none;
 	text-transform: uppercase;
-}
-
-.dropdown-menu {
-    min-width: 14rem;
-    left: -10rem;
 }
 
 /*///////////////////////*/
@@ -96,3 +88,30 @@ body {
 	font-size: 18px;
 }
 
+/*///Для формы регистрации//*/
+
+.register {
+	margin-top: 26%;
+}
+
+.register p {
+    text-align: center;
+    font-size: 20px;
+}
+
+/*////Для авторизации/////*/
+
+.dropdown-menu {
+	min-width: 14rem;
+	left: -162px;
+}
+
+#dropdownMenuLink {
+	color: red;
+}
+
+.auto_exit {
+	left: -33px;
+    text-align: center;
+    min-width: 9rem;
+}
